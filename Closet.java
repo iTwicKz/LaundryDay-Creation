@@ -8,14 +8,16 @@ class Clothes{
 	private String lastWorn;
 	private int sweatLevel;
 	private boolean wash;
+	private int timesWorn;
 	
-	public Clothes(String color, String type, String material, String lastWorn, int sweatLevel, boolean wash){
+	public Clothes(String color, String type, String material, String lastWorn, int sweatLevel, boolean wash, int timesWorn){
 		this.color = color;
 		this.type = type;
 		this.material = material;
 		this.lastWorn = lastWorn;
 		this.sweatLevel = sweatLevel;
 		this.wash = wash;
+		this.timesWorn = timesWorn;
 	}
 
 	public String getColor() {
@@ -56,6 +58,25 @@ class Clothes{
 	}
 
 	public void setMaterial(String material) {
+		String[] cat = new String[6];
+		cat[0] = "cotton";
+		cat[1] = "polyester";
+		cat[2] = "wool";
+		cat[3] = "silk";
+		cat[4] = "denim";
+		cat[5] = "corduroy";
+		int whichType = -1;
+		
+		for(int i = 0; i < cat.length; i++){
+			if(cat[i].equals(type)){
+				whichType = i;
+			}
+		}
+		
+		if(whichType == -1){
+			this.type = "Error";
+		}
+		else this.type = cat[whichType];
 		this.material = material;
 	}
 
@@ -63,7 +84,7 @@ class Clothes{
 		return lastWorn;
 	}
 
-	public void setLastWashed(String lastWorn) {
+	public void setLastWorn(String lastWorn) {
 		
 		this.lastWorn = lastWorn;
 	}
@@ -72,7 +93,8 @@ class Clothes{
 		return sweatLevel;
 	}
 
-	public void setSweatLevel(int sweatLevel) {
+	public void setSweatLevel(String sweat) {
+		int sweatLevel  = Integer.parseInt(sweat);
 		if(sweatLevel < 6 && sweatLevel > 0){
 			this.sweatLevel = sweatLevel;}
 		else this.sweatLevel = -9999999;
@@ -83,7 +105,19 @@ class Clothes{
 	}
 
 	public void setWash(boolean wash) {
-		this.wash = wash;
+		
+		int time = Spoil.getTimeElapsed(lastWorn);
+		boolean needsToClean = Spoil.getSpoiled(time, material, sweatLevel, timesWorn);
+		this.wash = needsToClean;
+	}
+	
+	public int getTimesWorn(){
+		return timesWorn;
+	}
+	
+	public void setTimesWorn(String times){
+		int timesWorn = Integer.parseInt(times);
+		this.timesWorn = timesWorn;
 	}
 	
 	

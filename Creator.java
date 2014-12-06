@@ -10,7 +10,7 @@ public class Creator {
 		
 		Clothes[] allClothes = new Clothes[articleOfClothes];
 		
-		int numOfLines = articleOfClothes * 5;
+		int numOfLines = articleOfClothes * 6;
 		String[] fileLines = new String[numOfLines];
 		
 		for(int i = 0; i < numOfLines; i++){
@@ -18,9 +18,15 @@ public class Creator {
 		}
 		
 		for(int i = 0; i < articleOfClothes; i++){
-			allClothes[i].color = fileLines[0 + 5*i];
-			allClothes[i].type = fileLines[1 + 5*i];
-			allClothes[i].material = fileLines[2 + 5*i];
+			allClothes[i].setColor(fileLines[0 + 6*i]);
+			allClothes[i].setType(fileLines[1 + 6*i]);
+			allClothes[i].setMaterial(fileLines[2 + 6*i]);
+			allClothes[i].setLastWorn(fileLines[3 + 6*i]);
+			allClothes[i].setSweatLevel(fileLines[4 + 6*i]);
+			allClothes[i].setTimesWorn(fileLines[5 + 6*i]);
+		}
+		
+		for(int i = 0; i < allClothes.length; i++){
 			
 		}
 	}

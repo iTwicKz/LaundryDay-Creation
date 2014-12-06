@@ -1,19 +1,16 @@
 import java.util.GregorianCalendar;
 
 
-public class TimeSpoil {
-
-}
-
-class TimeSpoil{
+class Spoil{
 	
 	private int timeElapsed;
+	private boolean spoil;
 	
-	public TimeSpoil(){
-		
+	public Spoil(int timeElapsed){
+		this.timeElapsed = timeElapsed;
 	}
 	
-	public int getTimeElapsed(String lastWorn){
+	public static int getTimeElapsed(String lastWorn){
 		GregorianCalendar calendar = new GregorianCalendar();
 		String[] dateSplit = lastWorn.split("/");
 		String dateElasped = "";
@@ -24,6 +21,25 @@ class TimeSpoil{
 		return timeElasped;
 	}
 	
+	public static boolean getSpoiled(int time, String material, int sweat, int timesWorn){
+		
+		int clean = 0;
+		clean = time;
+		if(material.equals("wool") || material.equals("denim") || material.equals("silk")){
+			clean /= 2;
+		}
+		clean += Math.pow(sweat, 3);
+		clean *= timesWorn;
+		
+		if(clean < 30){
+			return false;
+		}
+		else return true;
+		
+	}
 	
 	
 }
+
+
+
