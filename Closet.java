@@ -10,6 +10,16 @@ class Clothes{
 	private boolean wash;
 	private int timesWorn;
 	
+	public Clothes(){
+		color = "NULL";
+		type  = "NULL";
+		material = "NULL";
+		lastWorn = "NULL";
+		sweatLevel = -999;
+		wash = false;
+		timesWorn = -999;
+	}
+	
 	public Clothes(String color, String type, String material, String lastWorn, int sweatLevel, boolean wash, int timesWorn){
 		this.color = color;
 		this.type = type;

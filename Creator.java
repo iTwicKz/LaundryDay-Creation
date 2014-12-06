@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Creator {
 	public static void main(String[] args) throws IOException{
 		
-		File closet = new File("closet.txt");
-		Scanner input = new Scanner(closet);
+		//File closet = new File("closet.txt");
+		Scanner input = new Scanner(System.in);
 		int articleOfClothes = input.nextInt();
 		
 		Clothes[] allClothes = new Clothes[articleOfClothes];
@@ -15,6 +15,10 @@ public class Creator {
 		
 		for(int i = 0; i < numOfLines; i++){
 			fileLines[i] = input.nextLine();
+		}
+	
+		for(int i = 0; i < articleOfClothes; i++){
+			allClothes[i] = new Clothes();
 		}
 		
 		for(int i = 0; i < articleOfClothes; i++){
