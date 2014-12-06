@@ -26,8 +26,25 @@ public class Creator {
 			allClothes[i].setTimesWorn(fileLines[5 + 6*i]);
 		}
 		
+		int[] washListInt = new int[articleOfClothes];
+		int washes = 0;
+		
 		for(int i = 0; i < allClothes.length; i++){
-			
+			if(allClothes[i].isWash()){
+				washListInt[washes] = i;
+				washes++;
+			}
+		}
+		
+		
+		
+		File outFile = new File("Hamper.txt");
+		PrintWriter output = new PrintWriter(outFile);
+		output.println("You have these " + washes + " articles of clothing in your hamper");
+		
+		for(int i= 0; i < washes; i++){
+			output.println(washListInt[i]);
+			output.println(allClothes[i].toString());
 		}
 	}
 }

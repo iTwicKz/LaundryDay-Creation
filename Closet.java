@@ -100,15 +100,17 @@ class Clothes{
 		else this.sweatLevel = -9999999;
 	}
 
-	public boolean isWash() {
-		return wash;
-	}
 
 	public void setWash(boolean wash) {
 		
 		int time = Spoil.getTimeElapsed(lastWorn);
 		boolean needsToClean = Spoil.getSpoiled(time, material, sweatLevel, timesWorn);
 		this.wash = needsToClean;
+	}
+	
+
+	public boolean isWash() {
+		return wash;
 	}
 	
 	public int getTimesWorn(){
@@ -120,7 +122,9 @@ class Clothes{
 		this.timesWorn = timesWorn;
 	}
 	
-	
+	public String toString(){
+		return color + ", " + material + " " + type + System.getProperty("line.separator") + "Last Worn: " + lastWorn + System.getProperty("line.separator");
+	}
 }
 
 
