@@ -30,7 +30,24 @@ class Clothes{
 	}
 
 	public void setType(String type) {
-		this.type = type;
+		String[] cat = new String[5];
+		cat[0] = "shirt";
+		cat[1] = "pants";
+		cat[2] = "sweater";
+		cat[3] = "socks";
+		cat[4] = "underwear";
+		int whichType = -1;
+		
+		for(int i = 0; i < cat.length; i++){
+			if(cat[i].equals(type)){
+				whichType = i;
+			}
+		}
+		
+		if(whichType == -1){
+			this.type = "Error";
+		}
+		else this.type = cat[whichType];
 	}
 
 	public String getMaterial() {
@@ -67,3 +84,4 @@ class Clothes{
 	
 	
 }
+
