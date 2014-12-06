@@ -1,18 +1,19 @@
+import java.util.GregorianCalendar;
 
 class Clothes{
 	
 	private String color;
 	private String type;
 	private String material;
-	private int lastWashed;
+	private String lastWorn;
 	private int sweatLevel;
 	private boolean wash;
 	
-	public Clothes(String color, String type, String material, int lastWashed, int sweatLevel, boolean wash){
+	public Clothes(String color, String type, String material, String lastWorn, int sweatLevel, boolean wash){
 		this.color = color;
 		this.type = type;
 		this.material = material;
-		this.lastWashed = lastWashed;
+		this.lastWorn = lastWorn;
 		this.sweatLevel = sweatLevel;
 		this.wash = wash;
 	}
@@ -58,12 +59,13 @@ class Clothes{
 		this.material = material;
 	}
 
-	public int getLastWashed() {
-		return lastWashed;
+	public String getLastWorn() {
+		return lastWorn;
 	}
 
-	public void setLastWashed(int lastWashed) {
-		this.lastWashed = lastWashed;
+	public void setLastWashed(String lastWorn) {
+		
+		this.lastWorn = lastWorn;
 	}
 
 	public int getSweatLevel() {
@@ -71,7 +73,9 @@ class Clothes{
 	}
 
 	public void setSweatLevel(int sweatLevel) {
-		this.sweatLevel = sweatLevel;
+		if(sweatLevel < 6 && sweatLevel > 0){
+			this.sweatLevel = sweatLevel;}
+		else this.sweatLevel = -9999999;
 	}
 
 	public boolean isWash() {
@@ -84,4 +88,7 @@ class Clothes{
 	
 	
 }
+
+
+
 
