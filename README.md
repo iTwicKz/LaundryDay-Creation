@@ -1,0 +1,3 @@
+LaundryDay-Creation
+===================
+I hope to create a website that will allow people to log all of their clothes into a website and based on material, last washed date, sweat level of activity, and many other factors, they can determine whether or not the clothes must be washed or not. There can also be a strictly regulated laundry day schedule, and if the person were to miss this laundry day, then they will be notified. Also, if a logged item of clothing seems to need washing, that article of clothing can be deposited in a folder called the Hamper, where all of the dirty clothes will be logged so when it comes to laundry day, the person will know what clothes needs washing.
