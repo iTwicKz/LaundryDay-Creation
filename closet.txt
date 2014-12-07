@@ -21,7 +21,7 @@ pants
 denim
 11/18/2014
 2
-1
+5
 red
 shirt
 cotton

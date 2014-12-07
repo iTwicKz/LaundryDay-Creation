@@ -41,7 +41,7 @@ public class Creator {
 		
 		
 		
-		PrintWriter output = new PrintWriter(new File("Hamper.txt"));
+		PrintWriter output = new PrintWriter(new File("src/Hamper.txt"));
 		output.println("You have these " + washes + " articles of clothing in your hamper\n\n");
 		
 		for(int i= 0; i < washes; i++){

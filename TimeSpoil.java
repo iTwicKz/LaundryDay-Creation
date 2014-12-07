@@ -19,7 +19,7 @@ class Spoil{
 		int clean = 0;
 		clean = getTimeElapsed(time);
 		if(material.equals("wool") || material.equals("denim") || material.equals("silk")){
-			clean /= 2;
+			clean /= 1.5;
 		}
 		clean += Math.pow(sweat, 3);
 		clean *= timesWorn;
